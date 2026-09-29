@@ -26,9 +26,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions { jvmTarget = "17" }
+    
+    kotlinOptions { 
+        jvmTarget = "17" 
+    }
 
-    buildFeatures { viewBinding = true }
+    buildFeatures { 
+        viewBinding = true 
+    }
 }
 
 dependencies {
@@ -40,6 +45,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
-    // FFmpeg-Kit for video processing (H.264/AVC support)
-    implementation("com.arthenica:ffmpeg-kit-full-gpl:6.0-2")
+    // ✅ UPDATED: Actively maintained FFmpeg-Kit fork (drop-in replacement for com.arthenica)
+    // Includes libx264 (H.264/AVC) support required for your video processing
+    implementation("dev.ffmpegkit-maintained:ffmpeg-kit-full-gpl:6.0.3")
 }
